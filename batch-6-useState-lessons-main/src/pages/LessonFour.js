@@ -57,3 +57,47 @@ function LessonFour() {
 }
 
 export default LessonFour;
+// extra other option solostion
+import React, { useState } from 'react';
+
+function Form() {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form submitted:', user);
+    // do something with the form data
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input
+          type="text"
+          name="name"
+          value={user.name}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          value={user.email}
+          onChange={handleChange}
+        />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
