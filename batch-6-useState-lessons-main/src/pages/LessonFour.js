@@ -57,6 +57,8 @@ function LessonFour() {
 }
 
 export default LessonFour;
+// -------------------------------------
+// --------------------------------------
 // extra other option solostion
 import React, { useState } from 'react';
 
@@ -73,6 +75,11 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+//     empty from
+    setUser({
+    name: "",
+    email: "",
+  })
     console.log('Form submitted:', user);
     // do something with the form data
   };
