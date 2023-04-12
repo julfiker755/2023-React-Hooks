@@ -106,5 +106,17 @@ function Form() {
       </label>
       <button type="submit">Submit</button>
     </form>
+//    **************************************************************************************
+//    ***************************************************************************************
+//     ****************************************************************************************
+//    useState handle number convert vary Easy
+ const handlechange=(event)=>{
+        if(event.target.name === 'amount'){
+            setuser((prevalue)=>({...prevalue,[event.target.name]:parseFloat(event.target.value)}))
+        }else{
+            setuser((prevalue)=>({...prevalue,[event.target.name]:event.target.value}))
+        }
+        
+    }
   );
 }
